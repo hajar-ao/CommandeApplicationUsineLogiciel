@@ -1,0 +1,163 @@
+<div >
+	<snap-drawer>
+		<div class=snap-menu>
+			<div class="sidebar-header text-center">
+				<img src=resources/images/order_logo.png class="sidebar-img img-circle"></div>
+			<ul class=snap-ul>
+				<li ng-class="{active: $state.includes('overview')}">
+					<a ui-sref=overview>ACCUEIL</a>
+				</li>
+				<li ng-class="{active: $state.includes('newProduit')}"><a
+				ui-sref=newProduit>NOUVEAU PRODUIT</a></li>
+				<li ng-class="{active: $state.includes('newCommande')}">
+					<a ui-sref=newCommande>NOUVELLE COMMANDE</a>
+				</li>
+				<li ng-class="{active: $state.includes('ChercherCommande')}">
+					<a ui-sref=ChercherCommande >CHERCHER COMMANDE</a>
+				</li>
+				<li ng-class="{active: $state.includes('ChercherClient')}">
+					<a ui-sref=ChercherClient>CHERCHER CLIENT</a>
+				</li>
+				<li>
+					<a ui-sref=login>LOGOUT</a>
+				</li>
+
+			</ul>
+		</div>
+	</snap-drawer>
+
+	<snap-content snap-opt-tap-to-close=false>
+		<a snap-toggle=left ng-click="menuOpen = !menuOpen">
+			<span class=menutoggle> <i ng-hide=menuOpen class="fa fa-bars fa-2x"></i> <i ng-show=menuOpen class="fa fa-times fa-2x"></i>
+			</span>
+		</a>
+		<div class=fr>
+			<h2>Modification Commande</h2>
+		</div>
+		<div class=jumbotron>
+			<div class=container>
+				<div class="col-sm-6 col-md-12" style="color: black;">
+					<div class="thumbnail" style="padding: 11%;">
+						<h4 style="color: #f0ad4e;position: relative;bottom: 124px;left: 763px;"> <strong>Modifier Commande</strong>
+						</h4>
+						<h4 style="color: #f0ad4e;position: relative;bottom: 154px;left: -87px;cursor: pointer" ui-sref=commandesClient> <strong>Retour</strong>
+						</h4>
+
+						<form role = "form" style="margin-top: -118px;margin-left: -77px;width: 118%;">
+							<div class="row">
+								<div class="col-xs-12">
+									<form role="form">
+										<div class="row" >
+											<h4>Client</h4>
+											<hr>
+											<div class="row">
+												<div class="col-xs-12 col-sm-6 col-md-6">
+													<div class="form-group">
+														<input type="phone" name="telephone"  class="form-control" placeholder="Téléphone -- AutoComplete" value="0661 68 68 68" tabindex="1" ng-disabled="true"></div>
+												</div>
+
+											</div>
+											<div class="row">
+												<div class="col-xs-12 col-sm-6 col-md-6">
+													<div class="form-group">
+														<input type="text" name="nomComplet"  class="form-control" placeholder="Nom Complet"  value="Lina Mernis" tabindex="1" ng-disabled="true"></div>
+												</div>
+												<div class="col-xs-12 col-sm-6 col-md-6" >
+
+													<div class="maxl" style="margin-left: 122px;">
+														<label class="radio inline">
+															<input type="radio" name="sex" value="male" ng-disabled="true">
+															<span>H</span>
+														</label>
+														<label class="radio inline">
+															<input type="radio" name="sex" value="female" ng-disabled="true" checked >
+															<span>F</span>
+														</label>
+													</div>
+
+												</div>
+
+											</div>
+											<div class="row">
+												<div class="col-xs-12 col-sm-6 col-md-6">
+													<div class="form-group">
+														<input type="email" name="email"  class="form-control" placeholder="Email" value="Lina2@gmail.com" tabindex="1" ng-disabled="true"></div>
+												</div>
+
+											</div>
+										</div>
+										<div class="row">
+											<h4>Commande</h4>
+											<hr>
+
+											<div class="row">
+												<div class="col-xs-12 col-sm-6 col-md-6">
+
+													<select class="input-large"  >
+														<option value="Produi A" selected disabled >Nom Produit</option>
+														<option selected>Produit A</option>
+														<option>Ketchup</option>
+														<option>Relish</option>
+													</select>
+
+												</div>
+												<div class=" col-md-2">
+													<div class="form-group" style="margin-right: -41px;">
+														<input type="text" name="quantite"  class="form-control" placeholder="Quantité" value="1" tabindex="6"></div>
+												</div>
+												<div class="col-xs-12 col-sm-6 col-md-2">
+													<div class="form-group" style="margin-right: -40px;margin-left: 16px;">
+														<input type="text" name="prixUnitaire" class="form-control" placeholder="Prix Unit."   value="200" tabindex="6"></div>
+
+												</div>
+												<div class="col-xs-12 col-sm-6 col-md-2">
+
+													<button type="button" class="btn btn-default" aria-label="Left Align" style="margin-left: 13px;background-color: #cbc9c9">
+														<span class="glyphicon glyphicon-plus" aria-hidden="true" style="color: white;"></span>
+													</button>
+												</div>
+
+											</div>
+											<div class="row">
+												<div class="col-xs-12 col-sm-6 col-md-6">
+													<div class="form-group">
+														<input type="text" name="adresse" class="form-control" placeholder="Adresse" value="3, Rue Aba Merniss, Rabat" tabindex="1"></div>
+												</div>
+
+												<div class="col-xs-12 col-sm-6 col-md-6">
+													<div class="form-group">
+														<select class="input-large">
+															<option value="" selected disabled >Statut: EN COURS</option>
+															<option >En Cours</option>
+															<option selected>Annulée</option>
+															<option>Livrée</option>
+														</select>
+
+													</div>
+												</div>
+
+											</div>
+										</div>
+										<hr>
+
+										<div class="form-actions text-right">
+											<button type="button"  class="btn btn-success"  ng-click="save()" style="font-size:14px;" >
+												<span  aria-hidden="true">
+													<strong>Enregistrer</strong>
+												</span>
+											</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</form>
+
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</snap-content>
+
+</div>

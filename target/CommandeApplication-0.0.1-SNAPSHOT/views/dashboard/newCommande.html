@@ -1,0 +1,332 @@
+<div >
+	<snap-drawer>
+	<div class=snap-menu>
+		<div class="sidebar-header text-center">
+			<img src=resources/images/order_logo.png
+				class="sidebar-img img-circle">
+		</div>
+		<ul class=snap-ul>
+			<li ng-class="{active: $state.includes('overview')}"><a
+				ui-sref=overview>ACCUEIL</a></li>
+			<li ng-class="{active: $state.includes('newProduit')}"><a
+				ui-sref=newProduit>NOUVEAU PRODUIT</a></li>
+			<li ng-class="{active: $state.includes('newCommande')}"><a
+				ui-sref=newCommande>NOUVELLE COMMANDE</a></li>
+			<li ng-class="{active: $state.includes('ChercherCommande')}"><a
+				ui-sref=ChercherCommande>CHERCHER COMMANDE</a></li>
+			<li ng-class="{active: $state.includes('ChercherClient')}"><a
+				ui-sref=ChercherClient>CHERCHER CLIENT</a></li>
+			<li><a ui-sref=login>LOGOUT</a></li>
+
+		</ul>
+	</div>
+	</snap-drawer>
+
+	<snap-content snap-opt-tap-to-close=false> <a
+		snap-toggle=left ng-click="menuOpen = !menuOpen"> <span
+		class=menutoggle> <i ng-hide=menuOpen class="fa fa-bars fa-2x"></i>
+			<i ng-show=menuOpen class="fa fa-times fa-2x"></i>
+	</span>
+	</a>
+	<div class=fr>
+		<h2>Nouvelle Commande</h2>
+	</div>
+	<div class=jumbotron>
+		<div class=container>
+			<div class="col-sm-6 col-md-6">
+				<div class="thumbnail">
+
+					<div class="row">
+						<div class="commande_detail">
+							<div class="information_commande"
+								style="margin-left: -78px; margin-bottom: -7px;">
+								<h4 style="color: black">Commande #46 - Yassine HAMIDI</h4>
+								<div style="color: grey;">
+									<h5>200 DH</h5>
+									<h6>1 x ProduitA = 200dh</h6>
+									<h6>7-6-2012 à 16:06</h6>
+								</div>
+								<h6 style="color: #2ecc71;">En cours</h6>
+							</div>
+							<div class="button_action">
+								<div class="row flex-items-xs-top" style="float: right;">
+									<div class="col-xs">
+										<span class="label label-default"> <a href="">Modifier</a>
+										</span>
+									</div>
+									<div class="col-xs">
+										<span class="label label-danger"> <a href="">Annulée</a>
+										</span>
+									</div>
+									<div class="col-xs">
+										<span class="label label-primary" style="padding-right: 17px;">
+											<a href="">Livrée</a>
+										</span>
+									</div>
+								</div>
+
+							</div>
+							<hr>
+						</div>
+					</div>
+					<div class="row">
+						<div class="commande_detail">
+							<div class="information_commande"
+								style="margin-left: -78px; margin-bottom: -7px;">
+								<h4 style="color: black">Commande #47 - Karim LINI</h4>
+								<div style="color: grey;">
+									<h5>100 DH</h5>
+									<h6>2 x Produit A = 100dh</h6>
+									<h6>7-5-2016 à 16:09</h6>
+								</div>
+								<h6 style="color: #2ecc71;">En cours</h6>
+							</div>
+							<div class="button_action">
+								<div class="row flex-items-xs-top" style="float: right;">
+									<div class="col-xs">
+										<span class="label label-default"> <a href="">Modifier</a>
+										</span>
+									</div>
+									<div class="col-xs">
+										<span class="label label-danger"> <a href="">Annulée</a>
+										</span>
+									</div>
+									<div class="col-xs">
+										<span class="label label-primary" style="padding-right: 17px;">
+											<a href="">Livrée</a>
+										</span>
+									</div>
+								</div>
+
+							</div>
+							<hr>
+						</div>
+					</div>
+					<div class="row">
+						<div class="commande_detail">
+							<div class="information_commande"
+								style="margin-left: -78px; margin-bottom: -7px;">
+								<h4 style="color: black">Commande #49 - Hamza HANINE</h4>
+								<div style="color: grey;">
+									<h5>120 DH</h5>
+									<h6>1 x Produit A = 100dh</h6>
+									<h6>1 x Produit C = 20dh</h6>
+									<h6>7-5-2016 à 16:21</h6>
+								</div>
+								<h6 style="color: #2ecc71;">En cours</h6>
+							</div>
+							<div class="button_action">
+								<div class="row flex-items-xs-top" style="float: right;">
+									<div class="col-xs">
+										<span class="label label-default"> <a href="">Modifier</a>
+										</span>
+									</div>
+									<div class="col-xs">
+										<span class="label label-danger"> <a href="">Annulée</a>
+										</span>
+									</div>
+									<div class="col-xs">
+										<span class="label label-primary" style="padding-right: 17px;">
+											<a href="">Livrée</a>
+										</span>
+									</div>
+								</div>
+
+							</div>
+							<hr>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="row" ng-controller="CommandeController as CtrlCmd">
+				<div class="col-sm-6 col-md-6" style="color: black;" ng-controller="ClientController as ctrl">
+					<div class="thumbnail">
+						<h4
+							style="color: #f0ad4e; position: relative; bottom: 110px; left: 241px;">
+							<strong>Nouvelle Commande</strong>
+						</h4>
+						
+						<form role="form"
+							style="margin-top: -132px; margin-left: -77px; width: 148%; margin-bottom: -18px;"
+							 name="myForm" ng-submit="ctrl.submit();CtrlCmd.submit();">
+							<input type="hidden" ng-model="ctrl.client.id" />
+							<input type="hidden" ng-model="CtrlCmd.commande.id" />
+				
+							<div class="row">
+								<div class="col-xs-12">
+									<form role="form">
+										<h4>Client</h4>
+										<hr>
+										<div class="row">
+											<div class="col-xs-12 col-sm-6 col-md-6">
+												<div class="form-group">
+													<input type="phone" name="telephone"
+														ng-model="ctrl.client.tel" class="form-control"
+														placeholder="Téléphone -- AutoComplete" tabindex="1">
+												</div>
+											</div>
+
+										</div>
+										<div class="row">
+											<div class="col-xs-12 col-sm-6 col-md-6">
+												<div class="form-group">
+													<input type="text" name="nomComplet"
+														ng-model="ctrl.client.nomComplet" class="form-control"
+														placeholder="Nom Complet" tabindex="1">
+												</div>
+											</div>
+											<div class="col-xs-12 col-sm-6 col-md-6">
+
+												<div class="maxl">
+													<label class="radio inline"> <input type="radio"
+														name="sex" value="H" checked ng-model="ctrl.client.sexe">
+														<span>H</span>
+													</label> <label class="radio inline"> <input type="radio"
+														name="sex" value="F" ng-model="ctrl.client.sexe">
+														<span>F</span>
+													</label>
+												</div>
+
+											</div>
+
+										</div>
+										<div class="row">
+											<div class="col-xs-12 col-sm-6 col-md-6">
+												<div class="form-group">
+													<input type="email" name="email" class="form-control"
+														placeholder="Email" tabindex="1"
+														ng-model="ctrl.client.email">
+												</div>
+											</div>
+
+										</div>
+										<h4>Commande</h4>
+										<hr>
+
+										<div class="row" ng-controller="ProduitController as ctrl">
+											<div class="col-xs-12 col-sm-6 col-md-6">
+
+												<select class="input-large" ng-model="produit"
+													ng-options="produit.nomProduit for produit in ctrl.produits">
+													<option value="" selected disabled>Nom Produit</option>
+
+												</select>
+
+											</div>
+											<div class=" col-md-2">
+												<div class="form-group" style="margin-right: -41px;">
+													<input type="text" name="quantite" class="form-control"
+														placeholder="Quantité" tabindex="6" ng-model="quantite">
+												</div>
+											</div>
+											<div class="col-xs-12 col-sm-6 col-md-2">
+												<div class="form-group"
+													style="margin-right: -40px; margin-left: 16px;">
+													<input type="text" name="prixUnitaire" class="form-control"
+														placeholder="Prix Unit." tabindex="6"
+														ng-model="produit.prixUnitaire">
+												</div>
+
+											</div>
+											<div class="col-xs-12 col-sm-6 col-md-2">
+
+												<button type="button" class="btn btn-default"
+													aria-label="Left Align"
+													style="margin-left: 13px; background-color: #cbc9c9" ng-click="quantite = quantite +1" >
+													<span class="glyphicon glyphicon-plus" aria-hidden="true"
+														style="color: white;"></span>
+												</button>
+											</div>
+
+										</div>
+										<div class="row" ng-controller="datePickerCtrl"
+											style="margin-bottom: 15px;">
+											<div class="col-xs-12 col-sm-6 col-md-6">
+												<div class="input-group">
+													<span class="input-group-addon"> <i
+														class="glyphicon glyphicon-calendar"></i>
+													</span> <input type="text" class="form-control"
+														uib-datepicker-popup="dd-MM-yyyy" ng-model="CtrlCmd.commande.dateComm"
+														is-open="popup1.opened" datepicker-options="dateOptions"
+														close-text="Close" alt-input-formats="altInputFormats"
+														ng-click="open1()" placeholder="Date Commande"  />
+												</div>
+													
+													
+											</div>
+
+											<div class="col-xs-12 col-sm-6 col-md-6">
+												<div class="input-group">
+													<span class="input-group-addon"> <i
+														class="glyphicon glyphicon-calendar"></i>
+													</span> <input type="text" class="form-control"
+														uib-datepicker-popup="dd-MM-yyyy" ng-model="CtrlCmd.commande.dateLiv"
+														is-open="popup2.opened" datepicker-options="dateOptions"
+														close-text="Close" alt-input-formats="altInputFormats"
+														ng-click="open2()" placeholder="Date Livraison"  />
+												</div>
+													
+											</div>
+
+										</div>
+										<div class="row">
+											<div class="col-xs-12 col-sm-6 col-md-6">
+												<div class="form-group">
+													<input type="text" name="adresse" class="form-control"
+														placeholder="Adresse" tabindex="1" ng-model="CtrlCmd.commande.adresse">
+												</div>
+											</div>
+
+											<div class="col-xs-12 col-sm-6 col-md-6">
+												<div class="form-group">
+													<select class="input-large" ng-model="CtrlCmd.commande.statutCommande">
+														<option value="" selected disabled>Statut: EN
+															COURS</option>
+														<option>En Cours</option>
+														<option>Annulée</option>
+														<option>Livrée</option>
+													</select>
+
+												</div>
+											</div>
+
+										</div>
+
+
+										<hr>
+										<div class="form-actions text-right">
+											<button type="submit" class="btn btn-success"
+												style="font-size: 14px;" >
+												<span aria-hidden="true"> <strong>Enregistrer</strong>
+												</span>
+											</button>
+										</div>
+										<div class="form-actions text-left" style="margin-top: -35px;">
+											<button type="submit" class="btn btn-warning"
+												ng-click="ctrl.reset();CtrlCmd.reset();" style="font-size: 14px;"
+												ng-disabled="myForm.$pristine">
+												<span aria-hidden="true"> <strong>Reset</strong>
+												</span>
+											</button>
+										</div>
+									</form>
+								</div>
+							</div>
+							<pre>{{ctrl.client | json}}</pre>
+							<pre>{{CtrlCmd.commande | json}}</pre>
+						</form>
+						
+					</div>
+				</div>
+				
+				
+				
+			</div>
+		</div>
+	</div>
+	</snap-content>
+
+</div>

@@ -1,0 +1,262 @@
+<div>
+	<snap-drawer>
+	<div class=snap-menu>
+		<div class="sidebar-header text-center">
+			<img src="resources/images/order_logo.png" class="sidebar-img img-circle">
+		</div>
+		<ul class=snap-ul>
+			<li ng-class="{active: $state.includes('overview')}"><a
+				ui-sref=overview>ACCUEIL</a></li>
+			<li ng-class="{active: $state.includes('newProduit')}"><a
+				ui-sref=newProduit>NOUVEAU PRODUIT</a></li>
+			<li ng-class="{active: $state.includes('newCommande')}"><a
+				ui-sref=newCommande>NOUVELLE COMMANDE</a></li>
+			<li ng-class="{active: $state.includes('ChercherCommande')}"><a
+				ui-sref=ChercherCommande>CHERCHER COMMANDE</a></li>
+			<li ng-class="{active: $state.includes('ChercherClient')}"><a
+				ui-sref=ChercherClient>CHERCHER CLIENT</a></li>
+			<li><a ui-sref=login>LOGOUT</a></li>
+
+		</ul>
+	</div>
+	</snap-drawer>
+
+	<snap-content snap-opt-tap-to-close=false> <a
+		snap-toggle=left ng-click="menuOpen = !menuOpen"> <span
+		class=menutoggle> <i ng-hide=menuOpen class="fa fa-bars fa-2x"></i>
+			<i ng-show=menuOpen class="fa fa-times fa-2x"></i>
+	</span>
+	</a>
+	<div class=fr>
+		<h2>Chercher Client</h2>
+	</div>
+	<div class=jumbotron>
+		<div class=container>
+			<div class="col-sm-6 col-md-6">
+				<div class="thumbnail">
+
+					<div class="row">
+						<div class="commande_detail">
+							<div class="information_commande"
+								style="margin-left: -78px; margin-bottom: -7px;">
+								<h4 style="color: black">Commande#46 - Yassine HAMIDI</h4>
+								<div style="color: grey;">
+									<h5>200 DH</h5>
+									<h6>1 x ProduitA = 200dh</h6>
+									<h6>7-6-2012 à 16:06</h6>
+								</div>
+								<h6 style="color: #2ecc71;">En cours</h6>
+							</div>
+							<div class="button_action">
+								<div class="row flex-items-xs-top" style="float: right;">
+									<div class="col-xs">
+										<span class="label label-default"> <a href="">Modifier</a>
+										</span>
+									</div>
+									<div class="col-xs">
+										<span class="label label-danger"> <a href="">Annulée</a>
+										</span>
+									</div>
+									<div class="col-xs">
+										<span class="label label-primary" style="padding-right: 17px;">
+											<a href="">Livrée</a>
+										</span>
+									</div>
+								</div>
+
+							</div>
+							<hr>
+						</div>
+					</div>
+					<div class="row">
+						<div class="commande_detail">
+							<div class="information_commande"
+								style="margin-left: -78px; margin-bottom: -7px;">
+								<h4 style="color: black">Commande#46 - Karim LINI</h4>
+								<div style="color: grey;">
+									<h5>100 DH</h5>
+									<h6>2 x Produit A = 100dh</h6>
+									<h6>7-5-2016 à 16:09</h6>
+								</div>
+								<h6 style="color: #2ecc71;">En cours</h6>
+							</div>
+							<div class="button_action">
+								<div class="row flex-items-xs-top" style="float: right;">
+									<div class="col-xs">
+										<span class="label label-default"> <a href="">Modifier</a>
+										</span>
+									</div>
+									<div class="col-xs">
+										<span class="label label-danger"> <a href="">Annulée</a>
+										</span>
+									</div>
+									<div class="col-xs">
+										<span class="label label-primary" style="padding-right: 17px;">
+											<a href="">Livrée</a>
+										</span>
+									</div>
+								</div>
+
+							</div>
+							<hr>
+						</div>
+					</div>
+					<div class="row">
+						<div class="commande_detail">
+							<div class="information_commande"
+								style="margin-left: -78px; margin-bottom: -7px;">
+								<h4 style="color: black">Commande#49 - Hamza HANINE</h4>
+								<div style="color: grey;">
+									<h5>120 DH</h5>
+									<h6>1 x Produit A = 100dh</h6>
+									<h6>1 x Produit C = 20dh</h6>
+									<h6>7-5-2016 à 16:21</h6>
+								</div>
+								<h6 style="color: #2ecc71;">En cours</h6>
+							</div>
+							<div class="button_action">
+								<div class="row flex-items-xs-top" style="float: right;">
+									<div class="col-xs">
+										<span class="label label-default"> <a href="">Modifier</a>
+										</span>
+									</div>
+									<div class="col-xs">
+										<span class="label label-danger"> <a href="">Annulée</a>
+										</span>
+									</div>
+									<div class="col-xs">
+										<span class="label label-primary" style="padding-right: 17px;">
+											<a href="">Livrée</a>
+										</span>
+									</div>
+								</div>
+
+							</div>
+							<hr>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="row">
+				<div class="col-sm-6 col-md-6" style="color: black;">
+					<div class="thumbnail">
+						<h4
+							style="color: #5cb85c; position: relative; bottom: 110px; left: 241px;">
+							<strong>Chercher Client</strong>
+						</h4>
+						<form role="form"
+							style="margin-top: -118px; margin-left: -77px; width: 148%;">
+							<div class="row">
+								<div class="col-xs-12">
+									<form role="form">
+										<h4>Client</h4>
+										<hr>
+										<div class="row">
+											<div class="col-xs-12 col-sm-6 col-md-7">
+												<div class="form-group">
+													<input type="phone" name="telephone" class="form-control"
+														placeholder="Téléphone -- AutoComplete" tabindex="1">
+												</div>
+											</div>
+
+										</div>
+										<div class="row">
+											<div class="col-xs-12 col-sm-6 col-md-7">
+												<div class="form-group">
+													<input type="text" name="nomComplet" class="form-control"
+														placeholder="Nom Complet -- AutoComplete" tabindex="1">
+												</div>
+											</div>
+											<div class="col-xs-12 col-sm-6 col-md-4">
+
+												<div class="maxl">
+													<label class="radio inline"> <input type="radio"
+														name="sex" ng-value="male" checked> <span>H</span>
+													</label> <label class="radio inline"> <input type="radio"
+														name="sex" ng-value="female"> <span>F</span>
+													</label>
+												</div>
+
+											</div>
+
+										</div>
+										<div class="row">
+											<div class="col-xs-12 col-sm-6 col-md-7">
+												<div class="form-group">
+													<input type="email" name="email" class="form-control"
+														placeholder="Email -- AutoComplete" tabindex="1">
+												</div>
+											</div>
+
+										</div>
+
+										<div class="row">
+											<div class="col-xs-12 col-sm-6 col-md-7">
+
+												<select class="input-large" style="width: 271px">
+													<option value="" selected disabled>Produit
+														Commandé</option>
+													<option>Mustard</option>
+													<option>Ketchup</option>
+													<option>Relish</option>
+												</select>
+
+											</div>
+
+										</div>
+										<div class="row" ng-controller="datePickerCtrl">
+											<div class="col-xs-12 col-sm-6 col-md-7">
+												<div class="input-group">
+													<span class="input-group-addon"> <i
+														class="glyphicon glyphicon-calendar"></i>
+													</span> <input type="text" class="form-control"
+														uib-datepicker-popup="{{format}}"
+														ng-model="dateDerniereCommande" is-open="popup1.opened"
+														datepicker-options="dateOptions" ng-required="true"
+														close-text="Close" alt-input-formats="altInputFormats"
+														ng-click="open1()" placeholder="Date dernière Commande" />
+												</div>
+
+											</div>
+
+										</div>
+										<div class="row">
+											<div class="col-xs-12 col-sm-6 col-md-7">
+
+												<select class="input-large"
+													style="width: 271px; height: 34px">
+													<option selected disabled>Total DH minimum
+														dépensé</option>
+													<option>Mustard</option>
+													<option>Ketchup</option>
+													<option>Relish</option>
+												</select>
+
+											</div>
+
+										</div>
+
+										<hr>
+										<div class="form-actions text-right">
+											<button type="button" class="btn btn-success"
+												ui-sref=resultRechercheClient ng-click="save()"
+												style="font-size: 14px;">
+												<span aria-hidden="true"> <strong>Chercher</strong>
+												</span>
+											</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</snap-content>
+
+</div>

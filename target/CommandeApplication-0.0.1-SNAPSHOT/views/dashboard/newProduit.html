@@ -1,0 +1,152 @@
+<div ng-controller="ProduitController as ctrl">
+	<snap-drawer>
+	<div class=snap-menu>
+		<div class="sidebar-header text-center">
+			<img src=resources/images/order_logo.png
+				class="sidebar-img img-circle">
+		</div>
+		<ul class=snap-ul>
+			<li ng-class="{active: $state.includes('overview')}"><a
+				ui-sref=overview>ACCUEIL</a></li>
+			<li ng-class="{active: $state.includes('newProduit')}"><a
+				ui-sref=newProduit>NOUVEAU PRODUIT</a></li>
+			<li ng-class="{active: $state.includes('newCommande')}"><a
+				ui-sref=newCommande>NOUVELLE COMMANDE</a></li>
+			<li ng-class="{active: $state.includes('ChercherCommande')}"><a
+				ui-sref=ChercherCommande>CHERCHER COMMANDE</a></li>
+			<li ng-class="{active: $state.includes('ChercherClient')}">
+					<a ui-sref=ChercherClient>CHERCHER CLIENT</a>
+				</li>
+			<li><a ui-sref=login>LOGOUT</a></li>
+
+		</ul>
+	</div>
+	</snap-drawer>
+
+	<snap-content snap-opt-tap-to-close=false> <a
+		snap-toggle=left ng-click="menuOpen = !menuOpen"> <span
+		class=menutoggle> <i ng-hide=menuOpen class="fa fa-bars fa-2x"></i>
+			<i ng-show=menuOpen class="fa fa-times fa-2x"></i>
+	</span>
+	</a>
+	<div class=fr>
+		<h2>Nouveau Produit</h2>
+	</div>
+	<div class=jumbotron>
+		<div class=container>
+			<div class="col-sm-6 col-md-6">
+				<div class="thumbnail">
+
+					<div class="row" ng-repeat="p in ctrl.produits">
+						<div class="produit_detail">
+							<div class="information_produit">
+								<h4 style="color: black">Produit #{{p.code_produit}} -
+									{{p.nomProduit}}</h4>
+								<div style="color: grey;">
+									<h5>Prix Unitaire : {{p.prixUnitaire}} DH</h5>
+								</div>
+
+							</div>
+						</div>
+						<div class="button_action">
+							<div class="row flex-items-xs-top" style="float: right;">
+								<div class="col-xs">
+									<span class="label label-default"> <a href=""
+										ng-click="ctrl.edit(p.code_produit)">Modifier</a>
+									</span>
+								</div>
+								<div class="col-xs">
+									<span class="label label-danger"> <a href=""
+										ng-click="ctrl.remove(p.code_produit)">Supprimer</a>
+									</span>
+								</div>
+
+							</div>
+
+						</div>
+						<hr>
+
+					</div>
+
+			
+
+				</div>
+					
+					
+					
+			</div>
+
+		
+			<div class="row">
+				<div class="col-sm-6 col-md-6" style="color: black;">
+					<div class="thumbnail">
+						<h4
+							style="color: #f0ad4e; position: relative; bottom: 110px; left: 241px;" >
+							<strong>Nouveau Produit</strong>
+							
+						</h4>
+						
+						<form role="form"
+							style="margin-top: -132px; margin-left: -77px; width: 148%; margin-bottom: -18px;"
+							ng-submit="ctrl.submit()" action="/produit/{id}" name="myForm">
+							<input type="hidden" ng-model="ctrl.produit.id" />
+							<div class="row">
+								<div class="col-xs-12">
+									<form role="form">
+										<h4>Produit</h4>
+										<hr>
+										<div class="row">
+											<div class="col-xs-12 col-sm-6 col-md-6">
+												<div class="form-group">
+													<input type="text" name="NomProduit"
+														ng-model="ctrl.produit.nomProduit" class="form-control"
+														placeholder="Nom Produit" tabindex="1">
+												</div>
+											</div>
+
+										</div>
+										<div class="row">
+											<div class="col-xs-12 col-sm-6 col-md-6">
+												<div class="form-group">
+													<input type="text" name="PrixUnitaire"
+														ng-model="ctrl.produit.prixUnitaire" class="form-control"
+														placeholder="Prix Unitaire" tabindex="1">
+												</div>
+											</div>
+										</div>
+
+										<hr>
+										<div class="form-actions text-right" ng-hide="hideSave">
+											<button type="submit" class="btn btn-success"
+												style="font-size: 14px;">
+												<span aria-hidden="true"> <strong>Enregistrer</strong>
+												</span>
+											</button>
+										</div>
+										<div class="form-actions text-right" ng-show="hideSave">
+											<button type="submit" class="btn btn-success"
+												style="font-size: 14px;">
+												<span aria-hidden="true"> <strong>Mettre a jour</strong>
+												</span>
+											</button>
+										</div>
+										<div class="form-actions text-left" style="margin-top: -35px;" ng-hide="hideSave">
+											<button type="submit" class="btn btn-warning"
+												ng-click="ctrl.reset()" style="font-size: 14px;"
+												ng-disabled="myForm.$pristine">
+												<span aria-hidden="true"> <strong>Reset</strong>
+												</span>
+											</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</snap-content>
+		
+</div>
